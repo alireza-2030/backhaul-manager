@@ -1,0 +1,76 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "inbounds": [
+        {
+            "tag": "tunnel-in",
+            "port": 3001,
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "127.0.0.1",
+                "port": 3001,
+                "network": "tcp,udp"
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "tag": "proxy",
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "45.157.233.156",
+                        "port": 12358,
+                        "users": [
+                            {
+                                "id": "74288dc3-348d-42c8-9e74-3603edec4f26",
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "fingerprint": "firefox",
+                    "serverName": "www.speedtest.net",
+                    "publicKey": "JzjaD_QWl9iczsZTQoF9nhYUBdha1S7sDMoFIDJz_zo",
+                    "shortId": "48846e7e5dc3fe0c",
+                    "spiderX": "/"
+                }
+            }
+        },
+        {
+            "tag": "direct",
+            "protocol": "freedom",
+            "settings": {}
+        },
+        {
+            "tag": "block",
+            "protocol": "blackhole",
+            "settings": {
+                "response": {
+                    "type": "http"
+                }
+            }
+        }
+    ],
+    "routing": {
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "type": "field",
+                "inboundTag": [
+                    "tunnel-in"
+                ],
+                "outboundTag": "proxy"
+            }
+        ]
+    }
+}
