@@ -9,7 +9,7 @@
 از کد زیر جهت استفاده از اسکریپت استفاده کنید. با زدن کد زیر بصورت خودکار اسکریپت اجرا می شود و هر 25 ثانیه ترافیک کاربرانی را که دارای لینک سابسکریپشن یکسانی هستند را یکسان سازی می کند.
 
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/M4mmad/3xui-multi-protocol/master/install.sh --ipv4)
+bash <(curl -Ls https://raw.githubusercontent.com/alireza-2030/backhaul-manager/master/install.sh --ipv4)
 ```
 
 ##  توجه 
@@ -38,5 +38,5 @@ systemctl start 3xui-multi-protocol
 
 #حذف
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/M4mmad/3xui-multi-protocol/master/unistall.sh --ipv4)
+bash <(curl -Ls https://raw.githubusercontent.com/alireza-2030/backhaul-manager/master/unistall.sh --ipv4)
 ```
