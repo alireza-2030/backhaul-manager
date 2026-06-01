@@ -11,7 +11,7 @@ rm -rf 3xui-multi-protocol
 
 if [[ "${release}" == "debian" ]]; then
 apt install git
-git clone https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
+git clone -b master https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
   cd 3xui-multi-protocol/3xui-multi-protocol
   wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb 
   dpkg -i packages-microsoft-prod.deb 
@@ -25,7 +25,7 @@ git clone https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protoc
 elif [[ "${release}" == "centos" ]]; then 
 dnf install wget
 dnf install git
-git clone https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
+git clone -b master https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
  cd 3xui-multi-protocol/3xui-multi-protocol
   sudo dnf install dotnet-sdk-7.0
   sudo dnf install aspnetcore-runtime-7.0
@@ -34,7 +34,7 @@ git clone https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protoc
 elif [[ "${release}" == "fedora" ]]; then
 dnf install wget
 dnf install git
-git clone https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
+git clone -b master https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
  cd 3xui-multi-protocol/3xui-multi-protocol
   sudo dnf install dotnet-sdk-7.0
   sudo dnf install aspnetcore-runtime-7.0
@@ -43,7 +43,7 @@ git clone https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protoc
 elif [[ "${release}" == "ubuntu" ]]; then
 declare repo_version=$(if command -v lsb_release &> /dev/null; then lsb_release -r -s; else grep -oP '(?<=^VERSION_ID=).+' /etc/os-release | tr -d '"'; fi)
 apt install git
-git clone https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
+git clone -b master https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
  cd 3xui-multi-protocol/3xui-multi-protocol
  wget https://packages.microsoft.com/config/ubuntu/$repo_version/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
  dpkg -i packages-microsoft-prod.deb
@@ -64,7 +64,7 @@ fi
 
  else
  apt install git
-git clone https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
+git clone -b master https://github.com/alireza-2030/backhaul-manager.git 3xui-multi-protocol
   wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
   chmod +x ./dotnet-install.sh
   ./dotnet-install.sh --channel 7.0
